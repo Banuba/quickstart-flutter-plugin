@@ -1,0 +1,140 @@
+PODS:
+  - banuba_sdk (1.6.0):
+    - BanubaSdk
+    - Flutter
+  - BanubaSdk (1.5.3):
+    - BNBAcneEyebagsRemoval (= 1.5.3)
+    - BNBBackground (= 1.5.3)
+    - BNBBody (= 1.5.3)
+    - BNBBrows (= 1.5.3)
+    - BNBCorrectors (= 1.5.3)
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBEyes (= 1.5.3)
+    - BNBFaceTracker (= 1.5.3)
+    - BNBHair (= 1.5.3)
+    - BNBHands (= 1.5.3)
+    - BNBLips (= 1.5.3)
+    - BNBNeurobeautyMakeup (= 1.5.3)
+    - BNBOcclusion (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkApi (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+    - BNBSkin (= 1.5.3)
+  - BNBAcneEyebagsRemoval (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBFaceTracker (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBBackground (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBBody (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBBrows (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBFaceTracker (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBCorrectors (1.5.3)
+  - BNBEffectPlayer (1.5.3)
+  - BNBEyes (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBFaceTracker (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBFaceTracker (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBHair (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBHands (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBLips (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBFaceTracker (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBNeurobeautyMakeup (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBFaceTracker (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBOcclusion (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBFaceTracker (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - BNBScripting (1.5.3)
+  - BNBSdkApi (1.5.3):
+    - BNBSdkCore (= 1.5.3)
+  - BNBSdkCore (1.5.3)
+  - BNBSkin (1.5.3):
+    - BNBEffectPlayer (= 1.5.3)
+    - BNBScripting (= 1.5.3)
+    - BNBSdkCore (= 1.5.3)
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - banuba_sdk (from `.symlinks/plugins/banuba_sdk/ios`)
+  - Flutter (from `Flutter`)
+
+SPEC REPOS:
+  https://github.com/sdk-banuba/banuba-sdk-podspecs.git:
+    - BanubaSdk
+    - BNBAcneEyebagsRemoval
+    - BNBBackground
+    - BNBBody
+    - BNBBrows
+    - BNBCorrectors
+    - BNBEffectPlayer
+    - BNBEyes
+    - BNBFaceTracker
+    - BNBHair
+    - BNBHands
+    - BNBLips
+    - BNBNeurobeautyMakeup
+    - BNBOcclusion
+    - BNBScripting
+    - BNBSdkApi
+    - BNBSdkCore
+    - BNBSkin
+
+EXTERNAL SOURCES:
+  banuba_sdk:
+    :path: ".symlinks/plugins/banuba_sdk/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  banuba_sdk: 1920a0491cd6a4a72246cdb5d786c45e420f3bd5
+  BanubaSdk: a4bbce585f997a7580485163d8a82b8a228b6c42
+  BNBAcneEyebagsRemoval: e79d905263485060e0305737212882bb9cdf2083
+  BNBBackground: 1dcfce4edb9f442915a14ddef1b97629bb485418
+  BNBBody: a79438712f07dc658f9a43feb1faca5a366ccacc
+  BNBBrows: 1f791028b2c9bb9017a1e895d8c29bfa8c65ea7f
+  BNBCorrectors: e740b45343571624f8491067a294f911e8a13617
+  BNBEffectPlayer: 81fff39028b5de2e47407b983470e84516922de1
+  BNBEyes: 340363173e189a195cdf5ba7f343dc56d8504f66
+  BNBFaceTracker: bba346279b929a2ded9ef8cf39d0469e580598ac
+  BNBHair: 0857775fff904bc0187a291d4241749ba28d0ba6
+  BNBHands: 16e578674c81b0f40a72ce9fd1fb374c856d3fd9
+  BNBLips: 799f2dad0c5a84c13a37fcee44390b7d70eb1c20
+  BNBNeurobeautyMakeup: 031092ae8f48a172a403258449223b824c055be8
+  BNBOcclusion: edeb5b753ee78fec16a274ce59fcc5ddad6b8831
+  BNBScripting: 9d344dcbaa6238131384b43a657419113a2d9f26
+  BNBSdkApi: 8391985e74a37a78701562961614a69ab00fb6ba
+  BNBSdkCore: 4269db24807f94eafa0616f22b520f224baa5e98
+  BNBSkin: 2f0cea19aea2c7b670bb4d133c3fbc890d19b3de
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+
+PODFILE CHECKSUM: 9bd633d3265251cb10a60712e61649cd23de755c
+
+COCOAPODS: 1.11.3
