@@ -57,3 +57,17 @@ android {
 flutter {
     source '../..'
 }
+
+// Add this:
+
+task copyEffects {
+    copy {
+        from flutter.source + '/effects'
+        into 'src/main/assets/bnb-resources/effects'
+    }
+}
+
+gradle.projectsEvaluated {
+    preBuild.dependsOn(copyEffects)
+}
+
