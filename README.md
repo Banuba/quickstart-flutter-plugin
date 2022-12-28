@@ -28,7 +28,7 @@ This is how to integrate Banuba SDK Flutter plugin into your existing app. You s
 3. Add code from [`lib/main.dart`](lib/main.dart) into your app.
 4. Add `effects` folder into your project. Link it with your app
     1. iOS: just link effects folder into `Runner` Xcode project (`File` -> `Add Files to 'Runner'...`).
-    2. Android: Add [the following][android/app/src/build.gradle#L61] code into app `build.gradle`.
+    2. Android: Add [the following](android/app/build.gradle#L61) code into app `build.gradle`.
 
 ### Docs
 You can find more info [here](https://docs.banuba.com/).
