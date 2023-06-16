@@ -1,6 +1,6 @@
 [![](https://www.banuba.com/hubfs/Banuba_November2018/Images/Banuba%20SDK.png)](https://docs.banuba.com/)
 
-## Quick start example for integrating [Banuba SDK](https://docs.banuba.com/) into Flutter apps.  
+## Quick start example for integrating [Banuba SDK](https://banuba.com/) into Flutter apps.  
 
 ## [Requirements](https://docs.banuba.com/face-ar-sdk-v1/overview/system_requirements)
 
