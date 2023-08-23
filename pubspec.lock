@@ -5,18 +5,18 @@ packages:
     dependency: transitive
     description:
       name: _fe_analyzer_shared
-      sha256: "4897882604d919befd350648c7f91926a9d5de99e67b455bf0917cc2362f4bb8"
+      sha256: ae92f5d747aee634b87f89d9946000c2de774be1d6ac3e58268224348cd0101a
       url: "https://pub.dev"
     source: hosted
-    version: "47.0.0"
+    version: "61.0.0"
   analyzer:
     dependency: transitive
     description:
       name: analyzer
-      sha256: "690e335554a8385bc9d787117d9eb52c0c03ee207a607e593de3c9d71b1cfe80"
+      sha256: ea3d8652bda62982addfd92fdc2d0214e5f82e43325104990d4f4c4a2a313562
       url: "https://pub.dev"
     source: hosted
-    version: "4.7.0"
+    version: "5.13.0"
   args:
     dependency: transitive
     description:
@@ -37,10 +37,10 @@ packages:
     dependency: "direct main"
     description:
       name: banuba_sdk
-      sha256: "6939040fc8372382e9b4a4c7e4c488b86f0164b17e29e3e1ab77c67f6cb95b21"
+      sha256: b451f9a282af795cef3504306ebc10742352545dbe9c5688520435361ce0e611
       url: "https://pub.dev"
     source: hosted
-    version: "1.7.0"
+    version: "1.8.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -191,10 +191,10 @@ packages:
     dependency: transitive
     description:
       name: pigeon
-      sha256: "6136ad922578ef81f3c997d3e2814a9c09e90875a4cc99a26f165eed507efe79"
+      sha256: d1ab184e028cfecd957d4de34f705b4f84b98661e6a4be1d9cac9dade278b937
       url: "https://pub.dev"
     source: hosted
-    version: "4.2.14"
+    version: "10.1.6"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -306,4 +306,4 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.1.0-185.0.dev <4.0.0"
-  flutter: ">=3.0.0"
+  flutter: ">=2.5.0"
