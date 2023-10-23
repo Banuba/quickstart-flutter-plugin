@@ -36,7 +36,11 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  banuba_sdk: ^1.6.0
+  banuba_sdk: 1.8.3
+  provider: ^6.0.2
+  path_provider: ^2.0.11
+  permission_handler: ^11.0.1
+  image_picker: ^1.0.4
 
 dev_dependencies:
   flutter_test:
