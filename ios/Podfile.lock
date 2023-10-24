@@ -1,96 +1,103 @@
 PODS:
   - banuba_sdk (1.8.2):
-    - BanubaSdk
+    - BNBAcneEyebagsRemoval (= 1.8.1)
+    - BNBBackground (= 1.8.1)
+    - BNBBody (= 1.8.1)
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBEyes (= 1.8.1)
+    - BNBFaceTracker (= 1.8.1)
+    - BNBFaceTrackerLite (= 1.8.1)
+    - BNBHair (= 1.8.1)
+    - BNBHands (= 1.8.1)
+    - BNBLips (= 1.8.1)
+    - BNBNeurobeautyMakeup (= 1.8.1)
+    - BNBOcclusion (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkApi (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+    - BNBSkin (= 1.8.1)
+    - BNBWatch (= 1.8.1)
     - Flutter
-  - BanubaSdk (1.8.0):
-    - BNBAcneEyebagsRemoval (= 1.8.0)
-    - BNBBackground (= 1.8.0)
-    - BNBBody (= 1.8.0)
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBEyes (= 1.8.0)
-    - BNBFaceTracker (= 1.8.0)
-    - BNBFaceTrackerLite (= 1.8.0)
-    - BNBHair (= 1.8.0)
-    - BNBHands (= 1.8.0)
-    - BNBLips (= 1.8.0)
-    - BNBNeurobeautyMakeup (= 1.8.0)
-    - BNBOcclusion (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkApi (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-    - BNBSkin (= 1.8.0)
-    - BNBWatch (= 1.8.0)
-  - BNBAcneEyebagsRemoval (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBFaceTracker (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBBackground (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBBody (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBEffectPlayer (1.8.0)
-  - BNBEyes (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBFaceTracker (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBFaceTracker (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBFaceTrackerLite (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBHair (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBHands (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBLips (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBFaceTracker (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBNeurobeautyMakeup (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBFaceTracker (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBOcclusion (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBFaceTracker (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBScripting (1.8.0)
-  - BNBSdkApi (1.8.0):
-    - BNBSdkCore (= 1.8.0)
-  - BNBSdkCore (1.8.0)
-  - BNBSkin (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
-  - BNBWatch (1.8.0):
-    - BNBEffectPlayer (= 1.8.0)
-    - BNBScripting (= 1.8.0)
-    - BNBSdkCore (= 1.8.0)
+  - BNBAcneEyebagsRemoval (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBFaceTracker (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBBackground (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBBody (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBEffectPlayer (1.8.1)
+  - BNBEyes (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBFaceTracker (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBFaceTracker (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBFaceTrackerLite (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBHair (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBHands (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBLips (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBFaceTracker (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBNeurobeautyMakeup (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBFaceTracker (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBOcclusion (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBFaceTracker (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBScripting (1.8.1)
+  - BNBSdkApi (1.8.1):
+    - BNBSdkCore (= 1.8.1)
+  - BNBSdkCore (1.8.1)
+  - BNBSkin (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
+  - BNBWatch (1.8.1):
+    - BNBEffectPlayer (= 1.8.1)
+    - BNBScripting (= 1.8.1)
+    - BNBSdkCore (= 1.8.1)
   - Flutter (1.0.0)
+  - image_picker_ios (0.0.1):
+    - Flutter
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - permission_handler_apple (9.1.1):
+    - Flutter
 
 DEPENDENCIES:
   - banuba_sdk (from `.symlinks/plugins/banuba_sdk/ios`)
   - Flutter (from `Flutter`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
 
 SPEC REPOS:
-  https://github.com/sdk-banuba/banuba-sdk-podspecs.git:
-    - BanubaSdk
+  https://github.com/sdk-banuba/banuba-sdk-podspecs:
     - BNBAcneEyebagsRemoval
     - BNBBackground
     - BNBBody
@@ -114,29 +121,37 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/banuba_sdk/ios"
   Flutter:
     :path: Flutter
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/ios"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
 
 SPEC CHECKSUMS:
-  banuba_sdk: f5b8a813e9e921366aef773f53978f16bae31cde
-  BanubaSdk: e5bda70d484c964f7231153b10b3134400465879
-  BNBAcneEyebagsRemoval: 29060f944dadc6275948b9d5ab1c70eb73ad5a71
-  BNBBackground: d51283b75292513a9567e45075b33ddbbcba3d07
-  BNBBody: 363749aa8b43b6b0d058903266a5cb09f4e4d850
-  BNBEffectPlayer: 45632f6ec7ca058fac189d96ed79291357901f58
-  BNBEyes: 373948191f3ddd6eb6d33fcf4e6e5ce9191644bb
-  BNBFaceTracker: f857220f48c34f32655dfc36a3819cb7fc2e34c1
-  BNBFaceTrackerLite: edc91df28b7f65657217a95dfd78ef783773d189
-  BNBHair: 086637d382dd406c763d0b5615561bc67f4edb1d
-  BNBHands: d44e30055d5aaa127dbc9acdf8d58a688fbcc9b3
-  BNBLips: c811906c5968d14191fc68862b718e6bfa919f85
-  BNBNeurobeautyMakeup: 32ba3b8831683bd4583dee1db8d70f3bda53b45a
-  BNBOcclusion: cfc22cd7982039862de4719ebb2f8557611142a8
-  BNBScripting: 9fa74ee95fd392055ad7fe2b0148363dfa9a78c5
-  BNBSdkApi: ae2f65846ef447b30fe88ae8fdfc2f3cf413a3e7
-  BNBSdkCore: a6f3d04664f0159560cbed1ea35379c8bda78ff3
-  BNBSkin: 3883e38fad131699ec10bf52d9c9c9177e939a22
-  BNBWatch: 617266f3cfac6880c008e4ae3699cff297b37238
+  banuba_sdk: 699098fb8fc965470a8413c7c64ee53b1d068849
+  BNBAcneEyebagsRemoval: f2f31713162f74a45b680a6a76c4166494821c66
+  BNBBackground: c9ab60f7664dc30a42491d3fecc282d9024d39cd
+  BNBBody: 5a07c584349ae544fe97d22ac8fb303ec4ceffb9
+  BNBEffectPlayer: aff0814043bfa530848a6d11b73ba878cd72ae88
+  BNBEyes: 42a908954bf0ded6fb50b2986be36b5571f3c14f
+  BNBFaceTracker: 98f734d58dfa67430171e69fd00a62b2aa87b3e8
+  BNBFaceTrackerLite: 0c5c7562d1f637cb9ebf719c9a14593e7810169d
+  BNBHair: 9196af43d4359e8b41a8d4f2f802f0bbd044be67
+  BNBHands: 42c16a05ebf9875752a2a71023621ee69700ba6e
+  BNBLips: 3164177744cf0dbd04b7ff3eb1ee16ebf4cc0d6e
+  BNBNeurobeautyMakeup: 4114e05511989d9054920e3f523498b1dc8bad95
+  BNBOcclusion: 61e250c08554798bb75d5cc76d451a8d7f5748d2
+  BNBScripting: d06cd248de74cc81e0210c5c570bef91ce78712a
+  BNBSdkApi: 0d9a2fb856145a08bc5a757dedfdbfe7f61d0ad1
+  BNBSdkCore: a8fe3d473dd757d32623dd6a78eabbda9e823042
+  BNBSkin: 0a083a862c611a67a0479034392531d11b9394e2
+  BNBWatch: 09d5cd5558f0b9e7d51a316153dd44a650274491
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
+  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
+  permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
 
-PODFILE CHECKSUM: 9bd633d3265251cb10a60712e61649cd23de755c
+PODFILE CHECKSUM: cec787e203f32929a708acee5df50ce881aedfb6
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.13.0

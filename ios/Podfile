@@ -1,5 +1,6 @@
-platform :ios, '13.0'
+platform :ios, '14.0'
 
+source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
@@ -38,5 +39,15 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
+
+    # Start of the permission_handler configuration
+    target.build_configurations.each do |config|
+      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+      '$(inherited)',
+      'PERMISSION_CAMERA=1',
+      'PERMISSION_MICROPHONE=1'
+      ]
+    end
+    # End of the permission_handler configuration
   end
 end
