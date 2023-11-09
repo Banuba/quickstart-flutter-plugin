@@ -32,6 +32,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
   bool _applyEffect = false;
   bool _isVideoRecording = false;
   bool _isFacingFront = true;
+  double _zoom = 1.0;
 
   @override
   void initState() {
@@ -92,7 +93,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
       _isVideoRecording = true;
       widget._banubaSdkManager
           .startVideoRecording(filePath, _captureAudioInVideoRecording,
-          _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
+              _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
           .then((value) => debugPrint('CameraPage: Video recorded successfully'));
     }
   }
@@ -102,7 +103,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
     debugPrint('CameraPage: Take photo = $photoFilePath');
     widget._banubaSdkManager
         .takePhoto(
-        photoFilePath, _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
+            photoFilePath, _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
         .then((value) => debugPrint('CameraPage: Photo taken successfully'))
         .onError((error, stackTrace) => debugPrint('CameraPage: Error while taking photo'));
   }
@@ -145,6 +146,22 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
                   },
                   child: Text(
                     'Front/Back'.toUpperCase(),
+                    style: const TextStyle(
+                      fontSize: 10.0,
+                    ),
+                  ),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: const StadiumBorder(),
+                    fixedSize: const Size(120, 40),
+                  ),
+                  onPressed: () {
+                    _zoom += 0.1;
+                    widget._banubaSdkManager.setZoom(_zoom);
+                  },
+                  child: Text(
+                    'Zoom +'.toUpperCase(),
                     style: const TextStyle(
                       fontSize: 10.0,
                     ),
