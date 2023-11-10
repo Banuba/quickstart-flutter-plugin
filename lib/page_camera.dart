@@ -33,6 +33,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
   bool _isVideoRecording = false;
   bool _isFacingFront = true;
   double _zoom = 1.0;
+  bool _enableFlashlight = false;
 
   @override
   void initState() {
@@ -116,7 +117,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
       children: [
         SizedBox(width: screenSize.width, height: screenSize.height, child: _epWidget),
         Positioned(
-            top: screenSize.height * 0.7,
+            top: screenSize.height * 0.6,
             left: screenSize.width * 0.05,
             child: Column(
               children: [
@@ -143,6 +144,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
                   onPressed: () {
                     _isFacingFront = !_isFacingFront;
                     widget._banubaSdkManager.setCameraFacing(_isFacingFront);
+                    setState(() {});
                   },
                   child: Text(
                     'Front/Back'.toUpperCase(),
@@ -166,7 +168,26 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
                       fontSize: 10.0,
                     ),
                   ),
-                )
+                ),
+                Visibility(
+                    visible: !_isFacingFront,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: const StadiumBorder(),
+                        fixedSize: const Size(120, 40),
+                      ),
+                      onPressed: () {
+                        /// Flashlight is available only for back camera
+                        _enableFlashlight = !_enableFlashlight;
+                        widget._banubaSdkManager.enableFlashlight(_enableFlashlight);
+                      },
+                      child: Text(
+                        'Toggle Flashlight'.toUpperCase(),
+                        style: const TextStyle(
+                          fontSize: 10.0,
+                        ),
+                      ),
+                    ))
               ],
             )),
         Positioned(
