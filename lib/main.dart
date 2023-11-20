@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:banuba_sdk/banuba_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -14,7 +13,7 @@ const banubaToken = <#"Place Token here"#>
 enum EntryPage { camera, image, touchUp }
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -25,48 +24,71 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
-  // Avoid creating multiple instances
-  final _banubaSdkManager = BanubaSdkManager();
-
-  // Use this flag to switch between Camera and Photo modes
-  final _entryPage = EntryPage.camera;
-
-  @override
-  void initState() {
-    super.initState();
-    initSDK();
-  }
-
-  // Platform messages are asynchronous, so we initialize it in an async method.
-  // Avoid calling this method frequently
-  Future<void> initSDK() async {
-    debugPrint('Init Banuba SDK');
-
-    await _banubaSdkManager.initialize([], banubaToken, SeverityLevel.info);
-
-    debugPrint('Banuba Sdk initialized successfully!');
-  }
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Face AR Flutter Sample',
-        theme: ThemeData(
-          primarySwatch: Colors.indigo,
-        ),
-        home: _createEntryPage());
+    final buttonStyle = ElevatedButton.styleFrom(
+      shape: const StadiumBorder(),
+      fixedSize: Size(MediaQuery.of(context).size.width / 2.0, 50),
+    );
+    Text textWidget(String text) {
+      return Text(
+        text.toUpperCase(),
+        style: const TextStyle(fontSize: 13.0),
+      );
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Face AR Flutter Sample'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            style: buttonStyle,
+            onPressed: () => _navigateToPage(EntryPage.camera),
+            child: textWidget('Open Camera'),
+          ),
+          SizedBox.fromSize(size: const Size.fromHeight(20.0)),
+          ElevatedButton(
+            style: buttonStyle,
+            onPressed: () => _navigateToPage(EntryPage.image),
+            child: textWidget('Image processing'),
+          ),
+          SizedBox.fromSize(size: const Size.fromHeight(20.0)),
+          ElevatedButton(
+            style: buttonStyle,
+            onPressed: () => _navigateToPage(EntryPage.touchUp),
+            child: textWidget('Touch Up features'),
+          ),
+        ],
+      ),
+    );
   }
 
-  StatefulWidget _createEntryPage() {
-    switch (_entryPage) {
+  void _navigateToPage(EntryPage entryPage) {
+    switch (entryPage) {
       case EntryPage.camera:
-        return CameraPage(_banubaSdkManager);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const CameraPage()),
+        );
+        return;
 
       case EntryPage.image:
-        return ImagePage(_banubaSdkManager);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ImagePage()),
+        );
+        return;
 
       case EntryPage.touchUp:
-        return TouchUpPage(_banubaSdkManager);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const TouchUpPage()),
+        );
+        return;
     }
   }
 }
@@ -82,7 +104,7 @@ Future<String> generateFilePath(String prefix, String fileExt) async {
 // when the user denies access or navigating the user to Settings for granting access.
 // Please implement better permissions handling in your project.
 Future<bool> requestPermissions() async {
-  final requiredPermissions = getPlatformPermissions();
+  final requiredPermissions = _getPlatformPermissions();
   for (var permission in requiredPermissions) {
     var ps = await permission.status;
     if (!ps.isGranted) {
@@ -95,7 +117,7 @@ Future<bool> requestPermissions() async {
   return true;
 }
 
-List<Permission> getPlatformPermissions() {
+List<Permission> _getPlatformPermissions() {
   if (Platform.isAndroid) {
     // Implement check version flow on your side
     final versionHigher11 = true;

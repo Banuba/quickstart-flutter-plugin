@@ -12,15 +12,16 @@ import 'main.dart';
 /// 3. Record video(with/out AR effect)
 /// 4. Take a picture(with/out AR effect)
 class CameraPage extends StatefulWidget {
-  final BanubaSdkManager _banubaSdkManager;
-
-  CameraPage(this._banubaSdkManager, {super.key}) {}
+  const CameraPage({super.key});
 
   @override
   State<CameraPage> createState() => _CameraPageState();
 }
 
 class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
+  // Avoid creating multiple instances
+  final _banubaSdkManager = BanubaSdkManager();
+
   final _epWidget = EffectPlayerWidget(key: null);
 
   // The higher resolution the more CPU and GPU resources are used.
@@ -40,6 +41,8 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
     debugPrint('CameraPage: init');
     super.initState();
 
+    initSDK();
+
     // It is required to grant all permissions for the plugin: Camera, Micro, Storage
     requestPermissions().then((granted) {
       if (granted) {
@@ -57,6 +60,23 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
     });
   }
 
+  // Platform messages are asynchronous, so we initialize it in an async method.
+  // Avoid calling this method frequently
+  Future<void> initSDK() async {
+    debugPrint('CameraPage: start init SDK');
+
+    await _banubaSdkManager.initialize([], banubaToken, SeverityLevel.info);
+
+    debugPrint('CameraPage: SDK initialized successfully');
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    debugPrint('CameraPage: release SDK');
+    _banubaSdkManager.deinitialize();
+  }
+
   Future<void> openCamera() async {
     debugPrint('CameraPage: open camera');
     // If the widget was removed from the tree while the asynchronous platform
@@ -66,9 +86,9 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
       debugPrint('CameraPage: Warning! widget is not mounted!');
       return;
     }
-    await widget._banubaSdkManager.openCamera();
-    await widget._banubaSdkManager.attachWidget(_epWidget.banubaId);
-    widget._banubaSdkManager.startPlayer();
+    await _banubaSdkManager.openCamera();
+    await _banubaSdkManager.attachWidget(_epWidget.banubaId);
+    _banubaSdkManager.startPlayer();
   }
 
   Future<void> toggleEffect() async {
@@ -76,10 +96,10 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
     _applyEffect = !_applyEffect;
     if (_applyEffect) {
       // Applies Face AR effect
-      widget._banubaSdkManager.loadEffect('effects/TrollGrandma');
+      _banubaSdkManager.loadEffect('effects/TrollGrandma');
     } else {
       // Discard Face AR effect
-      widget._banubaSdkManager.loadEffect('');
+      _banubaSdkManager.loadEffect('');
     }
   }
 
@@ -87,14 +107,14 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
     if (_isVideoRecording) {
       debugPrint('CameraPage: stopVideoRecording');
       _isVideoRecording = false;
-      widget._banubaSdkManager.stopVideoRecording();
+      _banubaSdkManager.stopVideoRecording();
     } else {
       final filePath = await generateFilePath('video_', '.mp4');
       debugPrint('CameraPage: startVideoRecording = $filePath');
       _isVideoRecording = true;
-      widget._banubaSdkManager
+      _banubaSdkManager
           .startVideoRecording(filePath, _captureAudioInVideoRecording,
-              _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
+          _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
           .then((value) => debugPrint('CameraPage: Video recorded successfully'));
     }
   }
@@ -102,9 +122,9 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
   Future<void> takePhoto() async {
     final photoFilePath = await generateFilePath('image_', '.png');
     debugPrint('CameraPage: Take photo = $photoFilePath');
-    widget._banubaSdkManager
+    _banubaSdkManager
         .takePhoto(
-            photoFilePath, _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
+        photoFilePath, _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
         .then((value) => debugPrint('CameraPage: Photo taken successfully'))
         .onError((error, stackTrace) => debugPrint('CameraPage: Error while taking photo'));
   }
@@ -143,7 +163,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
                   ),
                   onPressed: () {
                     _isFacingFront = !_isFacingFront;
-                    widget._banubaSdkManager.setCameraFacing(_isFacingFront);
+                    _banubaSdkManager.setCameraFacing(_isFacingFront);
                     setState(() {});
                   },
                   child: Text(
@@ -160,7 +180,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
                   ),
                   onPressed: () {
                     _zoom += 0.1;
-                    widget._banubaSdkManager.setZoom(_zoom);
+                    _banubaSdkManager.setZoom(_zoom);
                   },
                   child: Text(
                     'Zoom +'.toUpperCase(),
@@ -179,7 +199,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
                       onPressed: () {
                         /// Flashlight is available only for back camera
                         _enableFlashlight = !_enableFlashlight;
-                        widget._banubaSdkManager.enableFlashlight(_enableFlashlight);
+                        _banubaSdkManager.enableFlashlight(_enableFlashlight);
                       },
                       child: Text(
                         'Toggle Flashlight'.toUpperCase(),

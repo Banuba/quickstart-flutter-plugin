@@ -9,9 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'main.dart';
 
 class ImagePage extends StatefulWidget {
-  final BanubaSdkManager _banubaSdkManager;
-
-  ImagePage(this._banubaSdkManager, {super.key}) {}
+  const ImagePage({super.key});
 
   @override
   State<ImagePage> createState() => _ImagePageState();
@@ -22,11 +20,29 @@ class _ImagePageState extends State<ImagePage> with WidgetsBindingObserver {
   String? _processedImageFilePath;
   bool _isProcessing = false;
 
+  final BanubaSdkManager _banubaSdkManager = BanubaSdkManager();
+
   @override
   void initState() {
     debugPrint('ImagePage: init');
     super.initState();
+    initSDK();
     _pickImage();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    debugPrint('ImagePage: release SDK');
+    _banubaSdkManager.deinitialize();
+  }
+
+  Future<void> initSDK() async {
+    debugPrint('ImagePage: start init SDK');
+
+    await _banubaSdkManager.initialize([], banubaToken, SeverityLevel.info);
+
+    debugPrint('ImagePage: SDK initialized successfully');
   }
 
   Future<void> _pickImage() async {
@@ -46,15 +62,15 @@ class _ImagePageState extends State<ImagePage> with WidgetsBindingObserver {
   Future<void> processImage() async {
     _isProcessing = true;
 
-    widget._banubaSdkManager.startPlayer();
-    widget._banubaSdkManager.loadEffect('effects/TrollGrandma');
+    _banubaSdkManager.startPlayer();
+    _banubaSdkManager.loadEffect('effects/TrollGrandma');
     final destFilePath = await generateFilePath('image_', '.png');
 
     debugPrint('ImagePage: process image dest = $destFilePath');
 
     setState(() {});
 
-    widget._banubaSdkManager.processImage(_pickedImageFile!.path, destFilePath).then((value) {
+    _banubaSdkManager.processImage(_pickedImageFile!.path, destFilePath).then((value) {
       debugPrint('ImagePage: image processed successfully!');
       _processedImageFilePath = destFilePath;
       _isProcessing = false;

@@ -9,15 +9,14 @@ import 'main.dart';
 typedef List<String> Processor(double progress);
 
 class TouchUpPage extends StatefulWidget {
-  final BanubaSdkManager _banubaSdkManager;
-
-  TouchUpPage(this._banubaSdkManager, {super.key}) {}
+  const TouchUpPage({super.key});
 
   @override
   State<TouchUpPage> createState() => _TouchUpPageState();
 }
 
 class _TouchUpPageState extends State<TouchUpPage> with WidgetsBindingObserver {
+  final BanubaSdkManager _banubaSdkManager = BanubaSdkManager();
   final _epWidget = EffectPlayerWidget(key: null);
 
   final List<Feature> _features = <Feature>[
@@ -276,6 +275,8 @@ class _TouchUpPageState extends State<TouchUpPage> with WidgetsBindingObserver {
     debugPrint('TouchUpPage: init');
     super.initState();
 
+    initSDK();
+
     // It is required to grant all permissions for the plugin: Camera, Micro, Storage
     requestPermissions().then((granted) {
       if (granted) {
@@ -293,6 +294,23 @@ class _TouchUpPageState extends State<TouchUpPage> with WidgetsBindingObserver {
     });
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    debugPrint('TouchUpPage: release SDK');
+    _banubaSdkManager.deinitialize();
+  }
+
+  // Platform messages are asynchronous, so we initialize it in an async method.
+  // Avoid calling this method frequently
+  Future<void> initSDK() async {
+    debugPrint('TouchUpPage: start init SDK');
+
+    await _banubaSdkManager.initialize([], banubaToken, SeverityLevel.info);
+
+    debugPrint('TouchUpPage: SDK initialized successfully');
+  }
+
   Future<void> openCamera() async {
     debugPrint('TouchUpPage: open camera');
     // If the widget was removed from the tree while the asynchronous platform
@@ -302,10 +320,10 @@ class _TouchUpPageState extends State<TouchUpPage> with WidgetsBindingObserver {
       debugPrint('TouchUpPage: Warning! widget is not mounted!');
       return;
     }
-    await widget._banubaSdkManager.openCamera();
-    await widget._banubaSdkManager.attachWidget(_epWidget.banubaId);
-    widget._banubaSdkManager.startPlayer();
-    widget._banubaSdkManager.loadEffect('effects/TouchUp');
+    await _banubaSdkManager.openCamera();
+    await _banubaSdkManager.attachWidget(_epWidget.banubaId);
+    _banubaSdkManager.startPlayer();
+    _banubaSdkManager.loadEffect('effects/TouchUp');
   }
 
   @override
@@ -355,7 +373,7 @@ class _TouchUpPageState extends State<TouchUpPage> with WidgetsBindingObserver {
   void _applyBeautyChanges(List<String> changes) async {
     for (var element in changes) {
       debugPrint('TouchUpPage: apply effect changes = $element');
-      widget._banubaSdkManager.evalJs(element);
+      _banubaSdkManager.evalJs(element);
     }
   }
 }
