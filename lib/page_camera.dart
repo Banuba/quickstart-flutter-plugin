@@ -74,6 +74,8 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
   void dispose() {
     super.dispose();
     debugPrint('CameraPage: release SDK');
+    _banubaSdkManager.stopPlayer();
+    _banubaSdkManager.closeCamera();
     _banubaSdkManager.deinitialize();
   }
 

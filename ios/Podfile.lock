@@ -1,5 +1,5 @@
 PODS:
-  - banuba_sdk (1.9.2):
+  - banuba_sdk (1.9.3):
     - BNBAcneEyebagsRemoval (= 1.9.1)
     - BNBBackground (= 1.9.1)
     - BNBBody (= 1.9.1)
@@ -129,7 +129,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
 
 SPEC CHECKSUMS:
-  banuba_sdk: 69072954ca5b6f4f09b710f032a08d25450b2309
+  banuba_sdk: 14f5838953450283dda899c2dc4d3a6749f592ba
   BNBAcneEyebagsRemoval: ee2d61bdbf92edb9dc7d072ed6ec43b79619eb4a
   BNBBackground: 3b81cb87c62fb069dc74b35e72f942811d4046e4
   BNBBody: d0bf2c44e3a72e953f590fb2419bf7eb385356bc
