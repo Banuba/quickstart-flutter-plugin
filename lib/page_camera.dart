@@ -98,10 +98,10 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
     _applyEffect = !_applyEffect;
     if (_applyEffect) {
       // Applies Face AR effect
-      _banubaSdkManager.loadEffect('effects/TrollGrandma');
+      _banubaSdkManager.loadEffect('effects/TrollGrandma', false);
     } else {
       // Discard Face AR effect
-      _banubaSdkManager.loadEffect('');
+      _banubaSdkManager.unloadEffect();
     }
   }
 
@@ -109,15 +109,16 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
     if (_isVideoRecording) {
       debugPrint('CameraPage: stopVideoRecording');
       _isVideoRecording = false;
-      _banubaSdkManager.stopVideoRecording();
+      await _banubaSdkManager.stopVideoRecording().then((_) {
+          debugPrint('CameraPage: video recording finished');
+      });
     } else {
       final filePath = await generateFilePath('video_', '.mp4');
       debugPrint('CameraPage: startVideoRecording = $filePath');
       _isVideoRecording = true;
       _banubaSdkManager
           .startVideoRecording(filePath, _captureAudioInVideoRecording,
-          _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
-          .then((value) => debugPrint('CameraPage: Video recorded successfully'));
+          _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt());
     }
   }
 

@@ -63,7 +63,7 @@ class _ImagePageState extends State<ImagePage> with WidgetsBindingObserver {
     _isProcessing = true;
 
     _banubaSdkManager.startPlayer();
-    _banubaSdkManager.loadEffect('effects/TrollGrandma');
+    _banubaSdkManager.loadEffect('effects/TrollGrandma', true);
     final destFilePath = await generateFilePath('image_', '.png');
 
     debugPrint('ImagePage: process image dest = $destFilePath');

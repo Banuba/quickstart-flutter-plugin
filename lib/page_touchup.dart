@@ -323,7 +323,7 @@ class _TouchUpPageState extends State<TouchUpPage> with WidgetsBindingObserver {
     await _banubaSdkManager.openCamera();
     await _banubaSdkManager.attachWidget(_epWidget.banubaId);
     _banubaSdkManager.startPlayer();
-    _banubaSdkManager.loadEffect('effects/TouchUp');
+    _banubaSdkManager.loadEffect('effects/TouchUp', false);
   }
 
   @override
