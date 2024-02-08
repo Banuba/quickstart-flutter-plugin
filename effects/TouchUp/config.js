@@ -13,3 +13,5 @@ function TeethWhitening(strength){
 
     Teeth.whitening(strength);
 }
+
+FaceMorph.face({jaw_narrowing: 1.0, chin_narrowing: 1.0})

@@ -1,0 +1,18 @@
+{
+    "assets": {
+        "images": {
+            "camera": {
+                "sort": -1,
+                "type": "procedural_texture",
+                "algorithm": "camera_composer"
+            }
+        }
+    },
+    "scene": "Dark_blue",
+    "script": {
+        "type": "latest",
+        "entry_point": "config.js"
+    },
+    "support360": false,
+    "type": "background"
+}

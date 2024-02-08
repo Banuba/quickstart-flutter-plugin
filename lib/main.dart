@@ -1,17 +1,17 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:banuba_sdk_example/page_camera.dart';
+import 'package:banuba_sdk_example/page_image.dart';
+import 'package:banuba_sdk_example/page_touchup.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:quickstart_flutter_plugin/page_arcloud.dart';
-import 'package:quickstart_flutter_plugin/page_camera.dart';
-import 'package:quickstart_flutter_plugin/page_image.dart';
-import 'package:quickstart_flutter_plugin/page_touchup.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 const banubaToken = <#"Place Token here"#>
 
-enum EntryPage { camera, image, touchUp, arCloud }
+enum EntryPage { camera, image, touchUp }
 
 void main() {
   runApp(const MaterialApp(home: MyApp()));
@@ -63,12 +63,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             onPressed: () => _navigateToPage(EntryPage.touchUp),
             child: textWidget('Touch Up features'),
           ),
-          SizedBox.fromSize(size: const Size.fromHeight(20.0)),
-          ElevatedButton(
-            style: buttonStyle,
-            onPressed: () => _navigateToPage(EntryPage.arCloud),
-            child: textWidget('Load from AR Cloud'),
-          ),
         ],
       ),
     );
@@ -94,13 +88,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const TouchUpPage()),
-        );
-        return;
-
-      case EntryPage.arCloud:
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const ARCloudPage()),
         );
         return;
     }
@@ -133,16 +120,21 @@ Future<bool> requestPermissions() async {
 
 List<Permission> _getPlatformPermissions() {
   if (Platform.isAndroid) {
-    // Implement check version flow on your side
-    final versionHigher11 = true;
-    if (versionHigher11) {
-      return [Permission.camera, Permission.microphone, Permission.manageExternalStorage];
-    } else {
-      return [Permission.camera, Permission.microphone, Permission.storage];
-    }
+    return [Permission.camera, Permission.microphone, Permission.storage];
   } else if (Platform.isIOS) {
     return [Permission.camera, Permission.microphone];
   } else {
     throw Exception('Platform is not supported!');
   }
+}
+
+void showToastMessage(String message) {
+  Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.CENTER,
+      timeInSecForIosWeb: 1,
+      textColor: Colors.white,
+      fontSize: 14.0
+  );
 }

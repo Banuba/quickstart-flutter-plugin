@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:banuba_sdk/banuba_sdk.dart';
 import 'package:flutter/material.dart';
@@ -16,29 +15,31 @@ class ImagePage extends StatefulWidget {
 }
 
 class _ImagePageState extends State<ImagePage> with WidgetsBindingObserver {
+  final _epWidget = EffectPlayerWidget(key: null);
+
   XFile? _pickedImageFile;
-  String? _processedImageFilePath;
   bool _isProcessing = false;
+  bool _isTouchUpEffect = false;
+  double _touchUpProgressValue = 0.0;
 
   final BanubaSdkManager _banubaSdkManager = BanubaSdkManager();
 
   @override
   void initState() {
-    debugPrint('ImagePage: init');
     super.initState();
     initSDK();
-    _pickImage();
   }
 
   @override
   void dispose() {
     super.dispose();
     debugPrint('ImagePage: release SDK');
+    _banubaSdkManager.discardEditingImage();
     _banubaSdkManager.deinitialize();
   }
 
   Future<void> initSDK() async {
-    debugPrint('ImagePage: start init SDK');
+    debugPrint('ImagePage: init SDK');
 
     await _banubaSdkManager.initialize([], banubaToken, SeverityLevel.info);
 
@@ -53,93 +54,155 @@ class _ImagePageState extends State<ImagePage> with WidgetsBindingObserver {
     if (_pickedImageFile == null) {
       debugPrint('ImagePage: Warning! Image is not picked');
       SystemNavigator.pop();
-    } else {
-      debugPrint('ImagePage: Picked image file = ${_pickedImageFile?.path}');
-      setState(() {});
+      return;
     }
-  }
-
-  Future<void> processImage() async {
-    _isProcessing = true;
-
-    _banubaSdkManager.startPlayer();
-    _banubaSdkManager.loadEffect('effects/TrollGrandma', true);
-    final destFilePath = await generateFilePath('image_', '.png');
-
-    debugPrint('ImagePage: process image dest = $destFilePath');
+    debugPrint('ImagePage: Picked image file = ${_pickedImageFile!.path}');
 
     setState(() {});
 
-    _banubaSdkManager.processImage(_pickedImageFile!.path, destFilePath).then((value) {
-      debugPrint('ImagePage: image processed successfully!');
-      _processedImageFilePath = destFilePath;
-      _isProcessing = false;
-      setState(() {});
-    }).onError((error, stackTrace) {
-      _processedImageFilePath = null;
-      _isProcessing = false;
-      debugPrint('ImagePage: Error while processing image');
+    await _banubaSdkManager.attachWidget(_epWidget.banubaId);
+    await _banubaSdkManager.startPlayer();
+    await _banubaSdkManager.startEditingImage(_pickedImageFile!.path);
+  }
+
+  Future<void> _applyNormaEffect() async {
+    _banubaSdkManager.discardEditingImage();
+    await _banubaSdkManager.loadEffect('effects/80s', false);
+
+    // Image should exists
+    await _banubaSdkManager.startEditingImage(_pickedImageFile!.path);
+
+    setState(() {
+      _isTouchUpEffect = false;
     });
   }
 
-  File? findStateFile() {
-    final File? imageFile;
-    if (_processedImageFilePath == null) {
-      if (_pickedImageFile == null) {
-        imageFile = null;
-      } else {
-        imageFile = File(_pickedImageFile!.path);
-      }
-    } else {
-      imageFile = File(_processedImageFilePath!);
-    }
-    return imageFile;
+  Future<void> _applyTouchUpEffect() async {
+    _banubaSdkManager.discardEditingImage();
+    await _banubaSdkManager.loadEffect('effects/TouchUp', true);
+
+    // Image should exists
+    await _banubaSdkManager.startEditingImage(_pickedImageFile!.path);
+
+    setState(() {
+      _isProcessing = false;
+      _isTouchUpEffect = true;
+    });
+  }
+
+  Future<void> _saveImage() async {
+    setState(() {
+      _isProcessing = true;
+    });
+
+    final imageFilePath = await generateFilePath('image_', '.png');
+
+    _banubaSdkManager.endEditingImage(imageFilePath).then((value) {
+      debugPrint('ImagePage: Image saved at path $imageFilePath');
+      showToastMessage("Edited image saved successfully");
+      setState(() {
+        _isProcessing = false;
+      });
+    }).onError((error, stackTrace) {
+      debugPrint('ImagePage: Error while saving image $error');
+      showToastMessage("Error while saving edited image");
+      setState(() {
+        _isProcessing = false;
+      });
+    });
+  }
+
+  void _applyBeautyChanges(String change) async {
+    debugPrint('ImagePage: apply effect changes = $change');
+    await _banubaSdkManager.evalJs(change);
   }
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final File? imageFile = findStateFile();
 
-    debugPrint('ImagePage: build: isProcessing = $_isProcessing, imageFile = $imageFile');
+    Widget actionButton(String title, bool visible, void Function() action) {
+      return Visibility(
+          visible: visible,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              shape: const StadiumBorder(),
+              backgroundColor: Colors.green,
+              fixedSize: const Size(120, 40),
+            ),
+            onPressed: action,
+            child: Text(
+              title.toUpperCase(),
+              style: const TextStyle(
+                fontSize: 10.0,
+              ),
+            ),
+          ));
+    }
+
+    final imageEmpty = _pickedImageFile == null;
 
     return Stack(children: [
-      imageFile == null
-          ? const Text('Pick image from gallery',
-          style: TextStyle(
-            fontSize: 10.0,
-          ))
-          : Image.file(
-        File(imageFile.path),
-        fit: BoxFit.cover,
-        height: double.infinity,
-        width: double.infinity,
-        alignment: Alignment.center,
+      SizedBox(width: screenSize.width, height: screenSize.height, child: _epWidget),
+      Positioned(
+        bottom: screenSize.height * 0.15,
+        left: screenSize.width * 0.05,
+        child: Visibility(
+          visible: !_isProcessing,
+          child: Column(
+            children: [
+              actionButton("Pick Image", imageEmpty, () => _pickImage()),
+              actionButton("Apply Effect", !imageEmpty, () => _applyNormaEffect()),
+              actionButton("Apply Beauty", !imageEmpty, () => _applyTouchUpEffect()),
+              actionButton("Save Image", !imageEmpty, () => _saveImage()),
+            ],
+          ),
+        ),
       ),
       Positioned(
-          bottom: screenSize.height * 0.03,
-          left: screenSize.width * 0.05,
+          bottom: screenSize.height * 0.05,
+          left: screenSize.width * 0.10,
           child: Visibility(
-              visible: _processedImageFilePath == null && !_isProcessing,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: const StadiumBorder(),
-                  backgroundColor: Colors.green,
-                  fixedSize: const Size(120, 40),
-                ),
-                onPressed: () => processImage(),
-                child: Text(
-                  "Effect".toUpperCase(),
-                  style: const TextStyle(
-                    fontSize: 10.0,
+              visible: _isTouchUpEffect && !_isProcessing,
+              child: Row(
+                children: [
+                  const Text(
+                    'Smooth',
+                    style: TextStyle(
+                        fontSize: 16.0, color: Colors.greenAccent, fontWeight: FontWeight.bold),
                   ),
-                ),
+                  Card(
+                      child: Slider(
+                    min: 0.0,
+                    value: _touchUpProgressValue,
+                    max: 100.0,
+                    label: "",
+                    onChanged: (double value) {
+                      setState(() {
+                        _touchUpProgressValue = value;
+                        _applyBeautyChanges('Skin.softening(${value / 100})');
+                      });
+                    },
+                  ))
+                ],
               ))),
       Center(
         child: Visibility(
           visible: _isProcessing,
           child: const CircularProgressIndicator(
             color: Colors.green,
+          ),
+        ),
+      ),
+      Center(
+        child: Visibility(
+          visible: _pickedImageFile == null,
+          child: const Text(
+            'No image selected.\nPlease pick image',
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.red,
+            ),
           ),
         ),
       )

@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSPhotoLibraryUsageDescription</key>
+	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Gallery access required to pick image for processing</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Micro access required to record video</string>
@@ -11,7 +11,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Quickstart Flutter Plugin</string>
+	<string>Banuba Sdk</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -19,7 +19,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>quickstart_flutter_plugin</string>
+	<string>banuba_sdk_example</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -31,7 +31,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Camera access required to display AR effects</string>
+	<string>Camera access required to render AR effects</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -39,12 +39,14 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiresFullScreen</key>
-    <true/>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>io.flutter.embedded_views_preview</key>
+	<true/>
 </dict>
 </plist>

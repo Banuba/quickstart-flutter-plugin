@@ -183,7 +183,6 @@ class FaceMorph {
             array.includes("squint") && morphs_04_vec4.w(params.squint);
             array.includes("lower_eyelid_pos") && morphs_08_vec4.x(params.lower_eyelid_pos);
             array.includes("lower_eyelid_size") && morphs_08_vec4.y(params.lower_eyelid_size);
-            array.includes("upper_eyelid_pos") && morphs_08_vec4.y(params.upper_eyelid_pos);
         }
     }
     /** Set nose morph params. Params should be a number (only width), or object with properties:

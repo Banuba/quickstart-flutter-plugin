@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io' as io;
 
 import 'package:banuba_sdk/banuba_sdk.dart';
 import 'package:flutter/material.dart';
@@ -30,11 +31,18 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
 
   final _captureAudioInVideoRecording = true;
 
-  bool _applyEffect = false;
+  final _effects = [
+    "80s", "TouchUp"
+  ];
+  int _currentEffectIndex = -1;
+  String? _currentEffectName = null;
+
   bool _isVideoRecording = false;
   bool _isFacingFront = true;
   double _zoom = 1.0;
   bool _enableFlashlight = false;
+
+  String? _filePath;
 
   @override
   void initState() {
@@ -74,6 +82,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
   void dispose() {
     super.dispose();
     debugPrint('CameraPage: release SDK');
+    _banubaSdkManager.unloadEffect();
     _banubaSdkManager.stopPlayer();
     _banubaSdkManager.closeCamera();
     _banubaSdkManager.deinitialize();
@@ -94,31 +103,39 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
   }
 
   Future<void> toggleEffect() async {
-    debugPrint('CameraPage: toggleEffect');
-    _applyEffect = !_applyEffect;
-    if (_applyEffect) {
-      // Applies Face AR effect
-      _banubaSdkManager.loadEffect('effects/TrollGrandma', false);
-    } else {
-      // Discard Face AR effect
+    _currentEffectIndex += 1;
+    if (_currentEffectIndex >= _effects.length) {
       _banubaSdkManager.unloadEffect();
+      setState(() {
+        _currentEffectName = null;
+      });
+      _currentEffectIndex = -1;
+      return;
     }
+
+    final effect = _effects[_currentEffectIndex];
+    setState(() {
+      _currentEffectName = effect;
+    });
+    _banubaSdkManager.loadEffect('effects/$effect', false);
   }
 
-  Future<void> handleVideoRecording() async {
-    if (_isVideoRecording) {
+  Future<void> handleVideoRecording(bool isVideoRecording) async {
+    if (isVideoRecording) {
       debugPrint('CameraPage: stopVideoRecording');
-      _isVideoRecording = false;
       await _banubaSdkManager.stopVideoRecording().then((_) {
-          debugPrint('CameraPage: video recording finished');
+        if (_filePath != null) {
+          debugPrint('CameraPage: Video recorded successfully.\n File path $_filePath.\n File exists ${io.File(_filePath!).existsSync()}');
+          showToastMessage('Video recorded successfully = $_filePath');
+        } else {
+          debugPrint('CameraPage: recording file path is null');
+        }
       });
     } else {
       final filePath = await generateFilePath('video_', '.mp4');
       debugPrint('CameraPage: startVideoRecording = $filePath');
-      _isVideoRecording = true;
-      _banubaSdkManager
-          .startVideoRecording(filePath, _captureAudioInVideoRecording,
-          _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt());
+      await _banubaSdkManager.startVideoRecording(filePath, _captureAudioInVideoRecording, _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt());
+      _filePath = filePath;
     }
   }
 
@@ -127,7 +144,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
     debugPrint('CameraPage: Take photo = $photoFilePath');
     _banubaSdkManager
         .takePhoto(
-        photoFilePath, _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
+            photoFilePath, _videoResolutionHD.width.toInt(), _videoResolutionHD.height.toInt())
         .then((value) => debugPrint('CameraPage: Photo taken successfully'))
         .onError((error, stackTrace) => debugPrint('CameraPage: Error while taking photo'));
   }
@@ -153,7 +170,7 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
                     toggleEffect();
                   },
                   child: Text(
-                    'Effect'.toUpperCase(),
+                    'Effect ${_currentEffectName != null ? "(${_currentEffectName!})" : ""}'.toUpperCase(),
                     style: const TextStyle(
                       fontSize: 10.0,
                     ),
@@ -225,9 +242,11 @@ class _CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
                     backgroundColor: _isVideoRecording ? Colors.red : Colors.green,
                   ),
                   onPressed: () {
+                    final isVideoRecording = _isVideoRecording;
                     setState(() {
-                      handleVideoRecording();
+                      _isVideoRecording = !_isVideoRecording;
                     });
+                    handleVideoRecording(isVideoRecording);
                   },
                   child: Text(
                     _isVideoRecording ? 'Stop'.toUpperCase() : 'Record Video'.toUpperCase(),

@@ -3,15 +3,7 @@
 require('bnb_js/global');
 const modules_scene_index = require('../scene/index.js');
 
-const SofteningVertexShader = "modules/skin/softening.vert";
-
-const SofteningFragmentShader = "modules/skin/softening.frag";
-
-const SkinVertexShader = "modules/skin/skin.vert";
-
-const SkinFragmentShader = "modules/skin/skin.frag";
-
-const SmoothTex = () => {
+function SmoothTex() {
     const cam_downsize_pass = new modules_scene_index.Pass(new modules_scene_index.ShaderMaterial({
         vertexShader: "$builtin$materials/copy_pixels.vert",
         fragmentShader: "$builtin$materials/copy_pixels.frag",
@@ -27,9 +19,10 @@ const SmoothTex = () => {
         height: 160,
         info: {
             format: "RGBA8",
-            load: "CLEAR",
-        },
+            load: "CLEAR"
+        }
     });
+
     const hblur_pass = new modules_scene_index.Pass(new modules_scene_index.ShaderMaterial({
         vertexShader: "modules/skin/hblur.vert",
         fragmentShader: "modules/skin/hblur.frag",
@@ -45,9 +38,10 @@ const SmoothTex = () => {
         height: 160,
         info: {
             format: "RGBA8",
-            load: "CLEAR",
-        },
+            load: "CLEAR"
+        }
     });
+
     const vblur_pass = new modules_scene_index.Pass(new modules_scene_index.ShaderMaterial({
         vertexShader: "modules/skin/vblur.vert",
         fragmentShader: "modules/skin/vblur.frag",
@@ -63,22 +57,33 @@ const SmoothTex = () => {
         height: 160,
         info: {
             format: "RGBA8",
-            load: "CLEAR",
-        },
+            load: "CLEAR"
+        }
     });
+
     const smooth_pass = new modules_scene_index.Pass(new modules_scene_index.ShaderMaterial({
         vertexShader: "modules/skin/smooth.vert",
         fragmentShader: "modules/skin/smooth.frag",
         uniforms: {
             tex: new modules_scene_index.Camera(),
-            blur_tex: vblur_pass,
+            blur_tex: vblur_pass
         },
         state: {
             backFaces: true,
         },
     }), new modules_scene_index.PlaneGeometry());
+
     return smooth_pass;
-};
+}
+
+const SofteningVertexShader = "modules/skin/softening.vert";
+
+const SofteningFragmentShader = "modules/skin/softening.frag";
+
+const SkinVertexShader = "modules/skin/skin.vert";
+
+const SkinFragmentShader = "modules/skin/skin.frag";
+
 class Skin {
     constructor() {
         Object.defineProperty(this, "_skin", {

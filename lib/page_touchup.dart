@@ -22,11 +22,11 @@ class _TouchUpPageState extends State<TouchUpPage> with WidgetsBindingObserver {
   final List<Feature> _features = <Feature>[
     /// Main
     Feature(
-        name: 'Smooth',
-        progressValue: 0.0,
-        min: 0,
-        max: 100.0,
-        processor: (double progress) => ['Skin.softening($progress)']
+      name: 'Smooth',
+      progressValue: 0.0,
+      min: 0,
+      max: 100.0,
+      processor: (double progress) => ['Skin.softening($progress)']
     ),
     Feature(
         name: 'Eyes',
@@ -81,9 +81,9 @@ class _TouchUpPageState extends State<TouchUpPage> with WidgetsBindingObserver {
         min: 0,
         max: 100.0,
         processor: (double progress) => [
-          'FaceMesh.chin_jaw_shortening($progress)',
-          'FaceMorph.face({jaw_narrowing: 1.0, chin_narrowing: 1.0})'
-        ]),
+              'FaceMesh.chin_jaw_shortening($progress)',
+              'FaceMorph.face({jaw_narrowing: 1.0, chin_narrowing: 1.0})'
+            ]),
     Feature(
         name: 'Brightening',
         progressValue: 0.0,
@@ -332,43 +332,43 @@ class _TouchUpPageState extends State<TouchUpPage> with WidgetsBindingObserver {
     final screenSize = MediaQuery.of(context).size;
     return Material(
         child: Stack(
-          children: [
-            SizedBox(width: screenSize.width, height: screenSize.height, child: _epWidget),
-            Container(
-                alignment: Alignment.bottomLeft,
-                child: Container(
-                  height: screenSize.height * 0.33,
-                  child: ListView.builder(
-                      padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
-                      itemCount: _features.length,
-                      itemBuilder: (BuildContext context, int index) =>
-                          _buildFeatureItem(_features[index], (index + 1))),
-                ))
-          ],
-        ));
+      children: [
+        SizedBox(width: screenSize.width, height: screenSize.height, child: _epWidget),
+        Container(
+            alignment: Alignment.bottomLeft,
+            child: Container(
+              height: screenSize.height * 0.33,
+              child: ListView.builder(
+                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
+                  itemCount: _features.length,
+                  itemBuilder: (BuildContext context, int index) =>
+                      _buildFeatureItem(_features[index], (index + 1))),
+            ))
+      ],
+    ));
   }
 
   Widget _buildFeatureItem(Feature feature, int index) => Row(
-    children: [
-      Text(
-        '$index. ${feature.name.toUpperCase()}',
-        style: const TextStyle(
-            fontSize: 10.0, color: Colors.greenAccent, fontWeight: FontWeight.bold),
-      ),
-      Slider(
-        min: feature.min,
-        value: feature.progressValue,
-        max: feature.max,
-        label: "",
-        onChanged: (double value) {
-          setState(() {
-            feature.progressValue = value;
-            _applyBeautyChanges(feature.processor(value / 100));
-          });
-        },
-      )
-    ],
-  );
+        children: [
+          Text(
+            '$index. ${feature.name.toUpperCase()}',
+            style: const TextStyle(
+                fontSize: 10.0, color: Colors.greenAccent, fontWeight: FontWeight.bold),
+          ),
+          Slider(
+            min: feature.min,
+            value: feature.progressValue,
+            max: feature.max,
+            label: "",
+            onChanged: (double value) {
+              setState(() {
+                feature.progressValue = value;
+                _applyBeautyChanges(feature.processor(value / 100));
+              });
+            },
+          )
+        ],
+      );
 
   void _applyBeautyChanges(List<String> changes) async {
     for (var element in changes) {
@@ -387,8 +387,8 @@ class Feature {
 
   Feature(
       {required this.name,
-        required this.progressValue,
-        required this.processor,
-        required this.min,
-        required this.max});
+      required this.progressValue,
+      required this.processor,
+      required this.min,
+      required this.max});
 }

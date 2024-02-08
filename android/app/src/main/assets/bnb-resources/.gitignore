@@ -1,1 +1,3 @@
-effects/
+# Effects are copied `example` folder.
+# See `copyEffects` in `app` `build.gradle`. 
+/effects
