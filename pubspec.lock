@@ -33,6 +33,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  banuba_arcloud:
+    dependency: "direct main"
+    description:
+      name: banuba_arcloud
+      sha256: "5f79553e1dc6a5c6f272d7834a7dee52e7be4ed25f504716fda60a8a1c2db384"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3"
   banuba_sdk:
     dependency: "direct main"
     description:

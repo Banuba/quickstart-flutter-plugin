@@ -1,4 +1,8 @@
 PODS:
+  - banuba_arcloud (0.0.1):
+    - BanubaARCloudSDK (= 1.32.1)
+    - BanubaUtilities (= 1.32.1)
+    - Flutter
   - banuba_sdk (1.9.8):
     - BNBBackground (= 1.9.1)
     - BNBEffectPlayer (= 1.9.1)
@@ -8,6 +12,8 @@ PODS:
     - BNBSdkCore (= 1.9.1)
     - BNBSkin (= 1.9.1)
     - Flutter
+  - BanubaARCloudSDK (1.32.1)
+  - BanubaUtilities (1.32.1)
   - BNBBackground (1.9.1):
     - BNBEffectPlayer (= 1.9.1)
     - BNBScripting (= 1.9.1)
@@ -44,6 +50,7 @@ PODS:
   - Toast (4.1.0)
 
 DEPENDENCIES:
+  - banuba_arcloud (from `.symlinks/plugins/banuba_arcloud/ios`)
   - banuba_sdk (from `.symlinks/plugins/banuba_sdk/ios`)
   - Flutter (from `Flutter`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
@@ -52,6 +59,9 @@ DEPENDENCIES:
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
 
 SPEC REPOS:
+  https://github.com/Banuba/specs.git:
+    - BanubaARCloudSDK
+    - BanubaUtilities
   https://github.com/CocoaPods/Specs.git:
     - Toast
   https://github.com/sdk-banuba/banuba-sdk-podspecs.git:
@@ -65,6 +75,8 @@ SPEC REPOS:
     - BNBSkin
 
 EXTERNAL SOURCES:
+  banuba_arcloud:
+    :path: ".symlinks/plugins/banuba_arcloud/ios"
   banuba_sdk:
     :path: ".symlinks/plugins/banuba_sdk/ios"
   Flutter:
@@ -79,7 +91,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
 
 SPEC CHECKSUMS:
+  banuba_arcloud: c12edd8155897f9b9e52d5b1691c2d62468b2227
   banuba_sdk: dc01c6e4b6c9d15dcee1b416d90742b162665e94
+  BanubaARCloudSDK: 5ba971329cd3d12bec250b986ad4e126aa1677b9
+  BanubaUtilities: ab695033e691b7a0e96e10e2c7977b3395f89e7a
   BNBBackground: 3b81cb87c62fb069dc74b35e72f942811d4046e4
   BNBEffectPlayer: dd3a81ed8040027d448be65feb18d1a6440f24c8
   BNBFaceTracker: 478c111abd77837163f8610b7f0466f622dce8e5
@@ -95,6 +110,6 @@ SPEC CHECKSUMS:
   permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
   Toast: ec33c32b8688982cecc6348adeae667c1b9938da
 
-PODFILE CHECKSUM: b709fe4e441f0ba152e11b8804a009d0f948b49a
+PODFILE CHECKSUM: 5f9cffd3fc89ddbbcfb83b1e9902afb6f1369b9a
 
 COCOAPODS: 1.14.2

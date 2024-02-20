@@ -1,5 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
+source 'https://github.com/Banuba/specs.git'
 
 platform :ios, '14.0'
 
