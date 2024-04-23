@@ -59,7 +59,7 @@ class _TouchUpPageState extends State<TouchUpPage> with WidgetsBindingObserver {
         progressValue: 0.0,
         min: -100.0,
         max: 100.0,
-        processor: (double progress) => ['aceMorph.lips({shape: 1.0, thickness: $progress})']
+        processor: (double progress) => ['FaceMorph.lips({shape: 1.0, thickness: $progress})']
     ),
     Feature(
         name: 'Face Width',
