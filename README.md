@@ -24,7 +24,9 @@ Feel free to [contact us](https://docs.banuba.com/face-ar-sdk-v1/support) if you
 This is how to integrate Banuba SDK Flutter plugin into your existing app. You still need a Client Token for this.
 
 1. Add `banuba_sdk` plugin: `flutter pub add banuba_sdk`.
-2. For iOS: add link to native Banuba SDK into `ios/Podfile`: `source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'`
+2. For iOS in `ios/Podfile` (see example): add a link to Banuba SDK `source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'`, add 
+desired `$bnb_sdk_version = '~> 1.13.0`, list Banuba SDK [packages you need](https://docs.banuba.com/face-ar-sdk-v1/core/tutorials/using_packages/).
+For Android in `build.gradle`: define `ext.bnb_sdk_version`, list [the packages you need](https://docs.banuba.com/face-ar-sdk-v1/core/tutorials/using_packages/).
 3. Add code from [basic sample](https://pub.dev/packages/banuba_sdk/example) into your app.
 4. Add `effects` folder into your project. Link it with your app
     1. iOS: just link effects folder into `Runner` Xcode project (`File` -> `Add Files to 'Runner'...`).
