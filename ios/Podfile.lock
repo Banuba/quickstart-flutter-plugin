@@ -3,39 +3,33 @@ PODS:
     - BanubaARCloudSDK (= 1.32.1)
     - BanubaUtilities (= 1.32.1)
     - Flutter
-  - banuba_sdk (1.9.8):
-    - BNBBackground (= 1.9.1)
-    - BNBEffectPlayer (= 1.9.1)
-    - BNBFaceTracker (= 1.9.1)
-    - BNBLips (= 1.9.1)
-    - BNBSdkApi (= 1.9.1)
-    - BNBSdkCore (= 1.9.1)
-    - BNBSkin (= 1.9.1)
+  - banuba_sdk (3.0.0):
+    - BNBSdkApi (~> 1.13.0)
     - Flutter
   - BanubaARCloudSDK (1.32.1)
   - BanubaUtilities (1.32.1)
-  - BNBBackground (1.9.1):
-    - BNBEffectPlayer (= 1.9.1)
-    - BNBScripting (= 1.9.1)
-    - BNBSdkCore (= 1.9.1)
-  - BNBEffectPlayer (1.9.1)
-  - BNBFaceTracker (1.9.1):
-    - BNBEffectPlayer (= 1.9.1)
-    - BNBScripting (= 1.9.1)
-    - BNBSdkCore (= 1.9.1)
-  - BNBLips (1.9.1):
-    - BNBEffectPlayer (= 1.9.1)
-    - BNBFaceTracker (= 1.9.1)
-    - BNBScripting (= 1.9.1)
-    - BNBSdkCore (= 1.9.1)
-  - BNBScripting (1.9.1)
-  - BNBSdkApi (1.9.1):
-    - BNBSdkCore (= 1.9.1)
-  - BNBSdkCore (1.9.1)
-  - BNBSkin (1.9.1):
-    - BNBEffectPlayer (= 1.9.1)
-    - BNBScripting (= 1.9.1)
-    - BNBSdkCore (= 1.9.1)
+  - BNBBackground (1.13.0):
+    - BNBEffectPlayer (= 1.13.0)
+    - BNBScripting (= 1.13.0)
+    - BNBSdkCore (= 1.13.0)
+  - BNBEffectPlayer (1.13.0)
+  - BNBFaceTracker (1.13.0):
+    - BNBEffectPlayer (= 1.13.0)
+    - BNBScripting (= 1.13.0)
+    - BNBSdkCore (= 1.13.0)
+  - BNBLips (1.13.0):
+    - BNBEffectPlayer (= 1.13.0)
+    - BNBFaceTracker (= 1.13.0)
+    - BNBScripting (= 1.13.0)
+    - BNBSdkCore (= 1.13.0)
+  - BNBScripting (1.13.0)
+  - BNBSdkApi (1.13.0):
+    - BNBSdkCore (= 1.13.0)
+  - BNBSdkCore (1.13.0)
+  - BNBSkin (1.13.0):
+    - BNBEffectPlayer (= 1.13.0)
+    - BNBScripting (= 1.13.0)
+    - BNBSdkCore (= 1.13.0)
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
@@ -45,13 +39,17 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - permission_handler_apple (9.1.1):
+  - permission_handler_apple (9.3.0):
     - Flutter
-  - Toast (4.1.0)
+  - Toast (4.1.1)
 
 DEPENDENCIES:
   - banuba_arcloud (from `.symlinks/plugins/banuba_arcloud/ios`)
   - banuba_sdk (from `.symlinks/plugins/banuba_sdk/ios`)
+  - BNBBackground (~> 1.13.0)
+  - BNBFaceTracker (~> 1.13.0)
+  - BNBLips (~> 1.13.0)
+  - BNBSkin (~> 1.13.0)
   - Flutter (from `Flutter`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
@@ -92,24 +90,24 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   banuba_arcloud: c12edd8155897f9b9e52d5b1691c2d62468b2227
-  banuba_sdk: dc01c6e4b6c9d15dcee1b416d90742b162665e94
+  banuba_sdk: f4e6e20d4d28eaf9dab18130ec18b36ea5b41928
   BanubaARCloudSDK: 5ba971329cd3d12bec250b986ad4e126aa1677b9
   BanubaUtilities: ab695033e691b7a0e96e10e2c7977b3395f89e7a
-  BNBBackground: 3b81cb87c62fb069dc74b35e72f942811d4046e4
-  BNBEffectPlayer: dd3a81ed8040027d448be65feb18d1a6440f24c8
-  BNBFaceTracker: 478c111abd77837163f8610b7f0466f622dce8e5
-  BNBLips: 880cbe24aa926f2b1ae2afb2bd8c5100ed0476c6
-  BNBScripting: 0d5efd7a28e2a3d29ed1f42a4e672e801b3a514e
-  BNBSdkApi: 84dde4fc542ed2069974badf91202c2df585e576
-  BNBSdkCore: a2f0a17be9c24ccf28cf5ea5135cba418d3544d4
-  BNBSkin: 1fdc110aaee047fd9b20a17e6970e45379f2f37b
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  BNBBackground: f2c3ccf8c7f131a4c6705312dde10f99df9aed20
+  BNBEffectPlayer: 4ca38373a5ef74333538b507e3ee02b2edea9672
+  BNBFaceTracker: 587e076fa32848c01bea1bbdb5c37cb2430644ad
+  BNBLips: 330b8085ccae172eaa298e20454ca1a49f6ff8a4
+  BNBScripting: 837c71d7f8ffcab39956b428d3c634b2b6248107
+  BNBSdkApi: 2f69f7ad0fe07159168d4f0f8bc15f15bb576ef2
+  BNBSdkCore: 6356367d5aaeb49675420228b57c010747f96acf
+  BNBSkin: 65adbcef66017fea55102bbd046b50c918b55b96
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
-  image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
-  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
-  permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
-  Toast: ec33c32b8688982cecc6348adeae667c1b9938da
+  image_picker_ios: b545a5f16c0fa88e3ecbbce3ed4de45567a8ec18
+  path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
+  permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
+  Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
 
-PODFILE CHECKSUM: 5f9cffd3fc89ddbbcfb83b1e9902afb6f1369b9a
+PODFILE CHECKSUM: e078f5c94db74469d8cd659e2642ef924c7d7063
 
-COCOAPODS: 1.14.2
+COCOAPODS: 1.15.2

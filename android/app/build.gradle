@@ -58,6 +58,13 @@ android {
     }
 }
 
+dependencies {
+    implementation "com.banuba.sdk:face_tracker:$project.bnb_sdk_version"
+    implementation "com.banuba.sdk:background:$project.bnb_sdk_version"
+    implementation "com.banuba.sdk:lips:$project.bnb_sdk_version"
+    implementation "com.banuba.sdk:skin:$project.bnb_sdk_version"
+}
+
 flutter {
     source '../..'
 }
