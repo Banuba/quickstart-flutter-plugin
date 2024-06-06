@@ -45,10 +45,10 @@ packages:
     dependency: "direct main"
     description:
       name: banuba_sdk
-      sha256: "35358445211a992a19989f6c614463c60607de392f500a06612e15ecf67d4d99"
+      sha256: de8c569d9d565887fa4305c8d1b1294d94470ce46ce84233d1ac80c7ae7b63e4
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.0.1"
   boolean_selector:
     dependency: transitive
     description:
