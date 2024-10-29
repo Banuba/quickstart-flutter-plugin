@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Gallery access required to pick image for processing</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Micro access required to record video</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -32,6 +28,10 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera access required to render AR effects</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Micro access required to record video</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Gallery access required to pick image for processing</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
