@@ -18,7 +18,8 @@ class ARCloudPage extends StatefulWidget {
 class _ARCloudPageState extends State<ARCloudPage> with WidgetsBindingObserver {
   static const _tag = 'ARCloud';
 
-  static const _arCloudUrl = '';
+  // Bucket with Demo effects, can be replaced by your own AR Cloud URL
+  static const _arCloudUrl = 'https://api.arcloud.banuba.net/v1/effects/far_test_v1.2';
 
   bool _isProcessing = false;
 
