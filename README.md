@@ -24,4 +24,5 @@ Feel free to [contact us](https://www.banuba.com/support) if you have any questi
 
 ### Integration docs
 
-You can find more information [here](https://github.com/Banuba/banuba-sdk-flutter/blob/master/mdDocs/integration_guide.md).
+- [Banuba Flutter Plugin](https://github.com/Banuba/banuba-sdk-flutter/blob/master/README.md).
+- [AR Cloud Flutter Plugin](https://github.com/Banuba/arcloud-flutter/blob/master/README.md)
