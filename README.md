@@ -2,35 +2,27 @@
 
 ## Quick start example for integrating [Banuba SDK](https://banuba.com/) into Flutter apps.  
 
-## [Requirements](https://docs.banuba.com/face-ar-sdk-v1/overview/system_requirements)
+## Requirements
+
+- **Android**: API level 23 (Android 6) or higher
+- **iOS**: Version 13.0 or higher
 
 ## Usage
 
 ### Token
-Before you commit to a license, you are free to test all the features of the SDK for free. To start it, [send us a message](https://www.banuba.com/facear-sdk/face-filters#form).  
-
-
-Feel free to [contact us](https://docs.banuba.com/face-ar-sdk-v1/support) if you have any questions.
+Test all SDK features for free during a 14-day trial. Send us a message to start the to start your [Face AR trial](https://www.banuba.com/facear-sdk/face-filters#form).
+Feel free to [contact us](https://www.banuba.com/support) if you have any questions regarding Banuba Flutter Plugin.
 
 ### Getting Started
 
-0. Clone the repository, ensure that you have installed [Flutter](https://docs.flutter.dev/get-started/install).
-1. Copy and Paste your client token into appropriate section of [`lib/main.dart`](lib/main.dart#L12).
-2. Run `flutter pub get`. This command will install all required dependences.
-3. Connect a device and run `flutter run`.
+1. Set up your [Flutter development environment](https://docs.flutter.dev/get-started/editor).
+2. Clone the repository. 
+3. Copy and Paste your client token into appropriate section of [`lib/main.dart`](lib/main.dart#L12).
+4. Copy and Paste your AR Cloud token into appropriate section of [`lib/page_arcloud.dart`](/lib/page_arcloud.dart#L22)
+5. Run `flutter pub get`. This command will install all required dependences.
+6. Connect a device and run `flutter run`.
 
-### Integration steps
+### Integration docs
 
-This is how to integrate Banuba SDK Flutter plugin into your existing app. You still need a Client Token for this.
-
-1. Add `banuba_sdk` plugin: `flutter pub add banuba_sdk`.
-2. For iOS in `ios/Podfile` (see example): add a link to Banuba SDK `source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'`, add 
-desired `$bnb_sdk_version = '~> 1.13.0`, list Banuba SDK [packages you need](https://docs.banuba.com/face-ar-sdk-v1/core/tutorials/using_packages/).
-For Android in `build.gradle`: define `ext.bnb_sdk_version`, list [the packages you need](https://docs.banuba.com/face-ar-sdk-v1/core/tutorials/using_packages/).
-3. Add code from [basic sample](https://pub.dev/packages/banuba_sdk/example) into your app.
-4. Add `effects` folder into your project. Link it with your app
-    1. iOS: just link effects folder into `Runner` Xcode project (`File` -> `Add Files to 'Runner'...`).
-    2. Android: Add [the following](android/app/build.gradle#L61) code into app `build.gradle`.
-
-### Docs
-You can find more info [here](https://docs.banuba.com/).
+- [Banuba Flutter Plugin](https://github.com/Banuba/banuba-sdk-flutter/blob/master/README.md).
+- [AR Cloud Flutter Plugin](https://github.com/Banuba/arcloud-flutter/blob/master/README.md)
