@@ -1,6 +1,6 @@
-[![](https://www.banuba.com/hubfs/Banuba_November2018/Images/Banuba%20SDK.png)](https://docs.banuba.com/)
+[![](https://www.banuba.com/hubfs/Banuba_November2018/Images/Banuba%20SDK.png)](https://docs.banuba.com/far-sdk/tutorials/development/basic_integration?platform=flutter)
 
-## Quick start example for integrating [Banuba SDK](https://banuba.com/) into Flutter apps.  
+## Quick start example for integrating [Banuba SDK](https://docs.banuba.com/far-sdk/tutorials/development/basic_integration?platform=flutter) into Flutter apps.  
 
 ## Requirements
 
@@ -11,7 +11,7 @@
 
 ### Token
 Test all SDK features for free during a 14-day trial. Send us a message to start the to start your [Face AR trial](https://www.banuba.com/facear-sdk/face-filters#form).
-Feel free to [contact us](https://www.banuba.com/support) if you have any questions regarding Banuba Flutter Plugin.
+Feel free to [contact us](https://docs.banuba.com/far-sdk/support) if you have any questions regarding Banuba Flutter Plugin.
 
 ### Getting Started
 
