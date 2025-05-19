@@ -10,7 +10,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-const banubaToken = <#"Place Token here"#>
+const banubaToken = <#"Place Token here";#>
 
 enum EntryPage { camera, image, touchUp, arCloud }
 
