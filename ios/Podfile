@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
 source 'https://github.com/Banuba/specs.git'
 
-platform :ios, '14.0'
+platform :ios, '15.0'
 
 $bnb_sdk_version = '~> 1.17.0'
 

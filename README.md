@@ -4,8 +4,8 @@
 
 ## Requirements
 
-- **Android**: API level 23 (Android 6) or higher
-- **iOS**: Version 13.0 or higher
+- **Android**: API level 26 (Android 8) or higher
+- **iOS**: Version 15.0 or higher
 
 ## Usage
 
