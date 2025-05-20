@@ -1,13 +1,14 @@
 PODS:
-  - banuba_arcloud (0.0.1):
-    - BanubaARCloudSDK (= 1.32.1)
-    - BanubaUtilities (= 1.32.1)
+  - banuba_arcloud (1.0.4):
+    - BanubaARCloudSDK (= 1.43.0)
+    - BanubaUtilities (= 1.43.0)
     - Flutter
-  - banuba_sdk (3.0.0):
+  - banuba_sdk (3.0.4):
     - BNBSdkApi (~> 1.17.0)
     - Flutter
-  - BanubaARCloudSDK (1.32.1)
-  - BanubaUtilities (1.32.1)
+  - BanubaARCloudSDK (1.43.0):
+    - BanubaUtilities (= 1.43.0)
+  - BanubaUtilities (1.43.0)
   - BNBBackground (1.17.1):
     - BNBEffectPlayer (= 1.17.1)
     - BNBScripting (= 1.17.1)
@@ -33,7 +34,6 @@ PODS:
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
-    - Toast
   - image_picker_ios (0.0.1):
     - Flutter
   - path_provider_foundation (0.0.1):
@@ -41,7 +41,6 @@ PODS:
     - FlutterMacOS
   - permission_handler_apple (9.3.0):
     - Flutter
-  - Toast (4.1.1)
 
 DEPENDENCIES:
   - banuba_arcloud (from `.symlinks/plugins/banuba_arcloud/ios`)
@@ -60,8 +59,6 @@ SPEC REPOS:
   https://github.com/Banuba/specs.git:
     - BanubaARCloudSDK
     - BanubaUtilities
-  https://github.com/CocoaPods/Specs.git:
-    - Toast
   https://github.com/sdk-banuba/banuba-sdk-podspecs.git:
     - BNBBackground
     - BNBEffectPlayer
@@ -89,10 +86,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
 
 SPEC CHECKSUMS:
-  banuba_arcloud: c12edd8155897f9b9e52d5b1691c2d62468b2227
-  banuba_sdk: 6601891ef4b13ef7c020ef65c79b398c9ca70a85
-  BanubaARCloudSDK: 5ba971329cd3d12bec250b986ad4e126aa1677b9
-  BanubaUtilities: ab695033e691b7a0e96e10e2c7977b3395f89e7a
+  banuba_arcloud: 2d32ed9464ab8e89a14d6199b80b0c63c1174348
+  banuba_sdk: 40eabec72fb550d93eee2a50c37c69a776b07fe7
+  BanubaARCloudSDK: e82c8eb19757b1a8d83167a4985a7eb1f00f80cc
+  BanubaUtilities: f32f40d15dc3d363ced801095b43ac8d4280e004
   BNBBackground: e6fb8e5a364bdba5157b0f150abd6eb938e2f7e6
   BNBEffectPlayer: 3badeeeb5ea52177766962001d22a5d9b362f662
   BNBFaceTracker: 0d432b3c4437ca17760e11231e269ca24ca0c5d1
@@ -102,12 +99,11 @@ SPEC CHECKSUMS:
   BNBSdkCore: a86f745456a97ac5507c2331ebf9472a9a2ec2d0
   BNBSkin: 9620b357518cd74c1be7a309db107785b3857882
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  fluttertoast: e9a18c7be5413da53898f660530c56f35edfba9c
-  image_picker_ios: c560581cceedb403a6ff17f2f816d7fea1421fc1
-  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
-  permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
-  Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
+  fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
+  image_picker_ios: 7fe1ff8e34c1790d6fff70a32484959f563a928a
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
 
-PODFILE CHECKSUM: 8b7a58961882d0f918060fd457b6de7a441fc2ec
+PODFILE CHECKSUM: c45eba47268df0c5fcf70a9c20dfacb88325a8b9
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
