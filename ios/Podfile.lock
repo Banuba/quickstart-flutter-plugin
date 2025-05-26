@@ -86,8 +86,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
 
 SPEC CHECKSUMS:
-  banuba_arcloud: 2d32ed9464ab8e89a14d6199b80b0c63c1174348
-  banuba_sdk: 40eabec72fb550d93eee2a50c37c69a776b07fe7
+  banuba_arcloud: cff8908982c738bc3fa9e3a3ef67b5343aee3891
+  banuba_sdk: 3c97a53faf98d97b00ef65f5d26d5e00c5051cf5
   BanubaARCloudSDK: e82c8eb19757b1a8d83167a4985a7eb1f00f80cc
   BanubaUtilities: f32f40d15dc3d363ced801095b43ac8d4280e004
   BNBBackground: e6fb8e5a364bdba5157b0f150abd6eb938e2f7e6
@@ -99,11 +99,11 @@ SPEC CHECKSUMS:
   BNBSdkCore: a86f745456a97ac5507c2331ebf9472a9a2ec2d0
   BNBSkin: 9620b357518cd74c1be7a309db107785b3857882
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
-  image_picker_ios: 7fe1ff8e34c1790d6fff70a32484959f563a928a
-  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
-  permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
+  fluttertoast: 21eecd6935e7064cc1fcb733a4c5a428f3f24f0f
+  image_picker_ios: c560581cceedb403a6ff17f2f816d7fea1421fc1
+  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
+  permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
 
 PODFILE CHECKSUM: c45eba47268df0c5fcf70a9c20dfacb88325a8b9
 
-COCOAPODS: 1.16.2
+COCOAPODS: 1.15.2
