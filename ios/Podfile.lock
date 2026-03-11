@@ -1,36 +1,36 @@
 PODS:
-  - banuba_arcloud (1.0.4):
-    - BanubaARCloudSDK (= 1.43.0)
-    - BanubaUtilities (= 1.43.0)
+  - banuba_arcloud (1.0.5):
+    - BanubaARCloudSDK (= 1.48.2)
+    - BanubaUtilities (= 1.48.2)
     - Flutter
-  - banuba_sdk (3.0.4):
-    - BNBSdkApi (~> 1.17.0)
+  - banuba_sdk (3.0.12):
+    - BNBSdkApi (~> 1.18.0)
     - Flutter
-  - BanubaARCloudSDK (1.43.0):
-    - BanubaUtilities (= 1.43.0)
-  - BanubaUtilities (1.43.0)
-  - BNBBackground (1.17.1):
-    - BNBEffectPlayer (= 1.17.1)
-    - BNBScripting (= 1.17.1)
-    - BNBSdkCore (= 1.17.1)
-  - BNBEffectPlayer (1.17.1)
-  - BNBFaceTracker (1.17.1):
-    - BNBEffectPlayer (= 1.17.1)
-    - BNBScripting (= 1.17.1)
-    - BNBSdkCore (= 1.17.1)
-  - BNBLips (1.17.1):
-    - BNBEffectPlayer (= 1.17.1)
-    - BNBFaceTracker (= 1.17.1)
-    - BNBScripting (= 1.17.1)
-    - BNBSdkCore (= 1.17.1)
-  - BNBScripting (1.17.1)
-  - BNBSdkApi (1.17.1):
-    - BNBSdkCore (= 1.17.1)
-  - BNBSdkCore (1.17.1)
-  - BNBSkin (1.17.1):
-    - BNBEffectPlayer (= 1.17.1)
-    - BNBScripting (= 1.17.1)
-    - BNBSdkCore (= 1.17.1)
+  - BanubaARCloudSDK (1.48.2):
+    - BanubaUtilities (= 1.48.2)
+  - BanubaUtilities (1.48.2)
+  - BNBBackground (1.18.0):
+    - BNBEffectPlayer (= 1.18.0)
+    - BNBScripting (= 1.18.0)
+    - BNBSdkCore (= 1.18.0)
+  - BNBEffectPlayer (1.18.0)
+  - BNBFaceTracker (1.18.0):
+    - BNBEffectPlayer (= 1.18.0)
+    - BNBScripting (= 1.18.0)
+    - BNBSdkCore (= 1.18.0)
+  - BNBLips (1.18.0):
+    - BNBEffectPlayer (= 1.18.0)
+    - BNBFaceTracker (= 1.18.0)
+    - BNBScripting (= 1.18.0)
+    - BNBSdkCore (= 1.18.0)
+  - BNBScripting (1.18.0)
+  - BNBSdkApi (1.18.0):
+    - BNBSdkCore (= 1.18.0)
+  - BNBSdkCore (1.18.0)
+  - BNBSkin (1.18.0):
+    - BNBEffectPlayer (= 1.18.0)
+    - BNBScripting (= 1.18.0)
+    - BNBSdkCore (= 1.18.0)
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
@@ -45,10 +45,10 @@ PODS:
 DEPENDENCIES:
   - banuba_arcloud (from `.symlinks/plugins/banuba_arcloud/ios`)
   - banuba_sdk (from `.symlinks/plugins/banuba_sdk/ios`)
-  - BNBBackground (~> 1.17.0)
-  - BNBFaceTracker (~> 1.17.0)
-  - BNBLips (~> 1.17.0)
-  - BNBSkin (~> 1.17.0)
+  - BNBBackground (~> 1.18.0)
+  - BNBFaceTracker (~> 1.18.0)
+  - BNBLips (~> 1.18.0)
+  - BNBSkin (~> 1.18.0)
   - Flutter (from `Flutter`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
@@ -86,24 +86,24 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
 
 SPEC CHECKSUMS:
-  banuba_arcloud: cff8908982c738bc3fa9e3a3ef67b5343aee3891
-  banuba_sdk: 3c97a53faf98d97b00ef65f5d26d5e00c5051cf5
-  BanubaARCloudSDK: e82c8eb19757b1a8d83167a4985a7eb1f00f80cc
-  BanubaUtilities: f32f40d15dc3d363ced801095b43ac8d4280e004
-  BNBBackground: e6fb8e5a364bdba5157b0f150abd6eb938e2f7e6
-  BNBEffectPlayer: 3badeeeb5ea52177766962001d22a5d9b362f662
-  BNBFaceTracker: 0d432b3c4437ca17760e11231e269ca24ca0c5d1
-  BNBLips: 56cdc7e23e344fb28c6417624b9d6f378a7466f6
-  BNBScripting: d5407811155575ba2998638573277f4553671f3c
-  BNBSdkApi: 259d366a1ec48c452115da1048efd342ff67f809
-  BNBSdkCore: a86f745456a97ac5507c2331ebf9472a9a2ec2d0
-  BNBSkin: 9620b357518cd74c1be7a309db107785b3857882
+  banuba_arcloud: 6bdadcd489264f51cc583e434ddb691d6d37ed5b
+  banuba_sdk: be15a36613594d8ce1e900aeb2b2ad95c1ce0e22
+  BanubaARCloudSDK: afe02be13fcfc5909a3a0ee6140c3fdf858385cc
+  BanubaUtilities: 7310041539d85bf18ab52edfa15a319793ec4d54
+  BNBBackground: 876aafe44c28da5202a8fc6eb222bccd59920b6b
+  BNBEffectPlayer: d02533930e139aa7443cc48bf04b4e212f93b767
+  BNBFaceTracker: a808fdab4cd9caf650200246195eb74fd0f147d6
+  BNBLips: 47743499bc15047a89989731dee869e56a664406
+  BNBScripting: 619686ec2ee1fb109c255a55578fddd86011a137
+  BNBSdkApi: cfbd9c48931b220c926d9d83ac684fa865b2a366
+  BNBSdkCore: 2cb98e883775749f7de2a386dfa84b69f0731794
+  BNBSkin: dbebbefa32c442ddfe3d6e2c3d6d4e156d423f09
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  fluttertoast: 21eecd6935e7064cc1fcb733a4c5a428f3f24f0f
-  image_picker_ios: c560581cceedb403a6ff17f2f816d7fea1421fc1
-  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
-  permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
+  fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
+  image_picker_ios: 7fe1ff8e34c1790d6fff70a32484959f563a928a
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
 
-PODFILE CHECKSUM: c45eba47268df0c5fcf70a9c20dfacb88325a8b9
+PODFILE CHECKSUM: 24b4194e0561dba5b7f71b04751c7828ebeb549c
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
